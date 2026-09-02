@@ -55,7 +55,7 @@ git remote add origin <仓库地址>
 ### 6. 推送到 GitHub
 
 ```bash
-git push -u origin main
+git push -u origin master
 ```
 
 将本地仓库的提交同步到 GitHub。`-u` 表示首次推送时建立分支跟踪关系。
@@ -73,5 +73,8 @@ git log
 - 提交前用 `git status` 确认一下改了哪些文件，避免不小心提交多余内容
 - Commit message 写清楚比写 "update" 或 "final" 好得多
 - 不在公开仓库上传密码、Token、API Key 等敏感信息
-- 如果不小心提交了敏感信息，立即修改并用新提交覆盖，必要时轮换密码"## ���¼�¼" 
-"- 2026-09-02����ɵ�һ�� Git �ύ��ϰ" 
+- 如果不小心提交了敏感信息，立即修改并用新提交覆盖，必要时轮换密码
+
+## 更新记录
+
+- 2026-09-02：完成第一次 Git 提交练习
