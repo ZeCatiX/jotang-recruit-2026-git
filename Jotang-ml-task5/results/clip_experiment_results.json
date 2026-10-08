@@ -1,0 +1,338 @@
+{
+  "model": "RN50",
+  "feature_dim": 1024,
+  "experiment1_correct_matching": {
+    "image_labels": [
+      "Cat",
+      "Dog",
+      "Eiffel Tower",
+      "Pizza"
+    ],
+    "text_labels": [
+      "a domestic cat sitting on a couch",
+      "a dog walking in a park",
+      "the Eiffel Tower in Paris at sunset",
+      "a pizza with cheese and toppings"
+    ],
+    "similarity_matrix": [
+      [
+        0.1926216036081314,
+        0.17409709095954895,
+        0.0427376851439476,
+        0.13191063702106476
+      ],
+      [
+        0.09613081812858582,
+        0.13511724770069122,
+        0.03158210963010788,
+        0.09065662324428558
+      ],
+      [
+        0.08347122371196747,
+        0.1512470841407776,
+        0.22539931535720825,
+        0.15111033618450165
+      ],
+      [
+        0.04675842449069023,
+        0.08859585970640182,
+        0.05372122675180435,
+        0.20916707813739777
+      ]
+    ],
+    "results": [
+      {
+        "image": "Cat",
+        "best_match": "a domestic cat sitting on a couch",
+        "best_similarity": 0.1926216036081314,
+        "second_best": "a dog walking in a park",
+        "second_similarity": 0.17409709095954895,
+        "margin": 0.01852451264858246,
+        "correct": true
+      },
+      {
+        "image": "Dog",
+        "best_match": "a dog walking in a park",
+        "best_similarity": 0.13511724770069122,
+        "second_best": "a domestic cat sitting on a couch",
+        "second_similarity": 0.09613081812858582,
+        "margin": 0.03898642957210541,
+        "correct": true
+      },
+      {
+        "image": "Eiffel Tower",
+        "best_match": "the Eiffel Tower in Paris at sunset",
+        "best_similarity": 0.22539931535720825,
+        "second_best": "a dog walking in a park",
+        "second_similarity": 0.1512470841407776,
+        "margin": 0.07415223121643066,
+        "correct": true
+      },
+      {
+        "image": "Pizza",
+        "best_match": "a pizza with cheese and toppings",
+        "best_similarity": 0.20916707813739777,
+        "second_best": "a dog walking in a park",
+        "second_similarity": 0.08859585970640182,
+        "margin": 0.12057121843099594,
+        "correct": true
+      }
+    ],
+    "all_correct": true
+  },
+  "experiment2_misleading": {
+    "misleading_texts": [
+      "a tabby dog sitting on a couch",
+      "a cat walking in a park",
+      "the Statue of Liberty in New York",
+      "a hamburger on a plate"
+    ],
+    "similarity_matrix": [
+      [
+        0.21007736027240753,
+        0.250110000371933,
+        0.1154668927192688,
+        0.152051642537117
+      ],
+      [
+        0.11662659794092178,
+        0.06904453039169312,
+        0.07303737848997116,
+        0.11294430494308472
+      ],
+      [
+        0.08113452792167664,
+        0.14396311342716217,
+        0.15611980855464935,
+        0.13806548714637756
+      ],
+      [
+        0.04628492146730423,
+        0.08305676281452179,
+        0.09252256900072098,
+        0.10974322259426117
+      ]
+    ],
+    "results": [
+      {
+        "image": "Cat",
+        "best_match": "a cat walking in a park",
+        "best_similarity": 0.250110000371933,
+        "second_best": "a tabby dog sitting on a couch",
+        "second_similarity": 0.21007736027240753,
+        "margin": 0.04003264009952545,
+        "correct": false
+      },
+      {
+        "image": "Dog",
+        "best_match": "a tabby dog sitting on a couch",
+        "best_similarity": 0.11662659794092178,
+        "second_best": "a hamburger on a plate",
+        "second_similarity": 0.11294430494308472,
+        "margin": 0.0036822929978370667,
+        "correct": false
+      },
+      {
+        "image": "Eiffel Tower",
+        "best_match": "the Statue of Liberty in New York",
+        "best_similarity": 0.15611980855464935,
+        "second_best": "a cat walking in a park",
+        "second_similarity": 0.14396311342716217,
+        "margin": 0.012156695127487183,
+        "correct": true
+      },
+      {
+        "image": "Pizza",
+        "best_match": "a hamburger on a plate",
+        "best_similarity": 0.10974322259426117,
+        "second_best": "the Statue of Liberty in New York",
+        "second_similarity": 0.09252256900072098,
+        "margin": 0.01722065359354019,
+        "correct": true
+      }
+    ]
+  },
+  "experiment3_discrimination": {
+    "mixed_texts": [
+      "a domestic cat sitting on a couch",
+      "a dog walking in a park",
+      "the Eiffel Tower in Paris at sunset",
+      "a pizza with cheese and toppings",
+      "a tabby dog sitting on a couch",
+      "a cat walking in a park",
+      "the Statue of Liberty in New York",
+      "a hamburger on a plate"
+    ],
+    "similarity_matrix": [
+      [
+        0.19262166321277618,
+        0.17409706115722656,
+        0.04273781180381775,
+        0.13191063702106476,
+        0.21007739007472992,
+        0.2501099109649658,
+        0.11546693742275238,
+        0.15205158293247223
+      ],
+      [
+        0.09613076597452164,
+        0.13511712849140167,
+        0.03158218786120415,
+        0.09065662324428558,
+        0.11662669479846954,
+        0.06904447823762894,
+        0.07303740084171295,
+        0.11294423043727875
+      ],
+      [
+        0.08347126096487045,
+        0.1512470841407776,
+        0.22539928555488586,
+        0.15111032128334045,
+        0.08113458007574081,
+        0.14396309852600098,
+        0.15611976385116577,
+        0.13806551694869995
+      ],
+      [
+        0.04675840213894844,
+        0.08859580755233765,
+        0.053721267729997635,
+        0.20916706323623657,
+        0.0462849885225296,
+        0.08305676281452179,
+        0.09252262860536575,
+        0.1097431480884552
+      ]
+    ],
+    "results": [
+      {
+        "image": "Cat",
+        "best_match": "a cat walking in a park",
+        "best_type": "错误",
+        "correct_max": 0.19262166321277618,
+        "wrong_max": 0.2501099109649658,
+        "margin": -0.057488247752189636,
+        "discriminated": false
+      },
+      {
+        "image": "Dog",
+        "best_match": "a dog walking in a park",
+        "best_type": "正确",
+        "correct_max": 0.13511712849140167,
+        "wrong_max": 0.11662669479846954,
+        "margin": 0.01849043369293213,
+        "discriminated": true
+      },
+      {
+        "image": "Eiffel Tower",
+        "best_match": "the Eiffel Tower in Paris at sunset",
+        "best_type": "正确",
+        "correct_max": 0.22539928555488586,
+        "wrong_max": 0.15611976385116577,
+        "margin": 0.06927952170372009,
+        "discriminated": true
+      },
+      {
+        "image": "Pizza",
+        "best_match": "a pizza with cheese and toppings",
+        "best_type": "正确",
+        "correct_max": 0.20916706323623657,
+        "wrong_max": 0.1097431480884552,
+        "margin": 0.09942391514778137,
+        "discriminated": true
+      }
+    ],
+    "correctly_discriminated": 3
+  },
+  "experiment4_temperature": {
+    "temperatures": [
+      0.01,
+      0.05,
+      0.07,
+      0.1,
+      0.2,
+      0.5,
+      1.0
+    ],
+    "results": [
+      {
+        "temperature": 0.01,
+        "softmax_values": [
+          0.8626927733421326,
+          0.13531525433063507,
+          2.6698072019826213e-07,
+          0.0019916456658393145
+        ],
+        "entropy": 0.5921643376350403,
+        "max_probability": 0.8626927733421326
+      },
+      {
+        "temperature": 0.05,
+        "softmax_values": [
+          0.49086010456085205,
+          0.3388877213001251,
+          0.024495288729667664,
+          0.14575685560703278
+        ],
+        "entropy": 1.5690181255340576,
+        "max_probability": 0.49086010456085205
+      },
+      {
+        "temperature": 0.07,
+        "softmax_values": [
+          0.43382370471954346,
+          0.3329533338546753,
+          0.05098031833767891,
+          0.18224260210990906
+        ],
+        "entropy": 1.7174508571624756,
+        "max_probability": 0.43382370471954346
+      },
+      {
+        "temperature": 0.1,
+        "softmax_values": [
+          0.3847317397594452,
+          0.3196738362312317,
+          0.08594496548175812,
+          0.20964941382408142
+        ],
+        "entropy": 1.8329797983169556,
+        "max_probability": 0.3847317397594452
+      },
+      {
+        "temperature": 0.2,
+        "softmax_values": [
+          0.32026979327201843,
+          0.2919378876686096,
+          0.15137256681919098,
+          0.23641978204250336
+        ],
+        "entropy": 1.9488496780395508,
+        "max_probability": 0.32026979327201843
+      },
+      {
+        "temperature": 0.5,
+        "softmax_values": [
+          0.2785298824310303,
+          0.2683994174003601,
+          0.20638792216777802,
+          0.24668283760547638
+        ],
+        "entropy": 1.9909121990203857,
+        "max_probability": 0.2785298824310303
+      },
+      {
+        "temperature": 1.0,
+        "softmax_values": [
+          0.2643021047115326,
+          0.25945109128952026,
+          0.22751332819461823,
+          0.24873344600200653
+        ],
+        "entropy": 1.9976567029953003,
+        "max_probability": 0.2643021047115326
+      }
+    ]
+  }
+}
