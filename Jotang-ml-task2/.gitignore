@@ -1,0 +1,7 @@
+# 数据文件（可通过 download_dataset.py 重新下载）
+data/cats/
+data/dogs/
+
+# Python 缓存
+__pycache__/
+*.pyc
