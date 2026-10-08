@@ -1,0 +1,48 @@
+
+==================================================================
+1. 版本信息（题目要求：输出 Python 与 PyTorch 版本）
+==================================================================
+Python 版本 : 3.13.9
+可执行文件  : D:\Anaconda3\python.exe
+操作系统    : Windows-11-10.0.26200-SP0
+
+PyTorch 版本: 2.11.0+cpu
+numpy 版本  : 2.3.5
+编译所用 CUDA 版本  : None (None 表示 CPU 版 wheel)
+当前 conda 环境: （非 conda 环境）
+
+==================================================================
+2. 一次 PyTorch 张量运算
+==================================================================
+x = [[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]]
+w = [[0.5, 1.0], [-1.0, 0.0], [0.5, 2.0]]
+torch.matmul(x, w) =
+tensor([[ 0.,  7.],
+        [ 0., 16.]])
+形状         : (2, 2)
+逐元素平方和 : 305.0
+按行求和     : [7.0, 16.0]
+与 NumPy 结果一致: True
+
+自动求导：L(a) = a² - 6a + 5，a = 3.0
+  损失值      loss = -4.0
+  梯度 dL/da   = 0.0    （解析解 2a - 6 = 0，一致）
+
+==================================================================
+3. torch.cuda.is_available()
+==================================================================
+torch.cuda.is_available() = False
+
+→ 当前 PyTorch 是 CPU 版（torch.__version__ 以 +cpu 结尾，torch.version.cuda 为 None），
+  所以这里一定是 False。这与本机有没有显卡无关。
+→ 本机实际有 RTX 5060，nvidia-smi 能正常识别（驱动 592.01 / CUDA 13.1），
+  但当前 conda 环境里装的是 pip 默认的 CPU wheel，没有链接 CUDA。
+
+换成 GPU 版只需在环境里装带 CUDA 后缀的 wheel，例如：
+    pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128
+（具体用哪个 cuXXX，去 pytorch.org 的 Get Started 页面按显卡和 Python 版本查）
+
+nvidia-smi 输出（证明显卡和驱动都在，只是 PyTorch 没接上）：
+   NVIDIA GeForce RTX 5060 Laptop GPU, 592.01, 8151 MiB
+
+环境自检完成。
