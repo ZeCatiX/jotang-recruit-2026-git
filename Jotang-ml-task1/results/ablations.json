@@ -1,0 +1,967 @@
+{
+  "seed": 0,
+  "epochs": 150,
+  "batch_size": 32,
+  "data": {
+    "n_samples": 300,
+    "moons_noise": 0.2
+  },
+  "device": "cpu",
+  "torch": "2.11.0+cpu",
+  "baseline": {
+    "config": {
+      "n_hidden": 2,
+      "width": 64,
+      "activation": "relu",
+      "optimizer": "adam",
+      "lr": 0.001,
+      "batch_size": 32,
+      "weight_decay": 0.0,
+      "dropout": 0.0
+    },
+    "n_params": 4482,
+    "train_acc": 0.9952,
+    "val_acc": 0.9556,
+    "test_acc": 1.0,
+    "val_loss_last": 0.2124,
+    "test_loss": 0.0,
+    "train_loss_first": 0.655,
+    "train_loss_last": 0.032,
+    "time_s": 0.985,
+    "rss_before": 398.3,
+    "rss_after": 398.2,
+    "rss_delta": -0.0
+  },
+  "ablations": {
+    "width": {
+      "title": "隐藏层宽度",
+      "xlabels": [
+        "16",
+        "32",
+        "64",
+        "128",
+        "256"
+      ],
+      "rows": [
+        {
+          "config": {
+            "n_hidden": 2,
+            "width": 16,
+            "activation": "relu",
+            "optimizer": "adam",
+            "lr": 0.001,
+            "batch_size": 32,
+            "weight_decay": 0.0,
+            "dropout": 0.0
+          },
+          "n_params": 354,
+          "train_acc": 0.9667,
+          "val_acc": 0.9333,
+          "test_acc": 0.9556,
+          "val_loss_last": 0.1768,
+          "test_loss": 0.0,
+          "train_loss_first": 0.6824,
+          "train_loss_last": 0.1145,
+          "time_s": 0.665,
+          "rss_before": 395.9,
+          "rss_after": 395.7,
+          "rss_delta": -0.2
+        },
+        {
+          "config": {
+            "n_hidden": 2,
+            "width": 32,
+            "activation": "relu",
+            "optimizer": "adam",
+            "lr": 0.001,
+            "batch_size": 32,
+            "weight_decay": 0.0,
+            "dropout": 0.0
+          },
+          "n_params": 1218,
+          "train_acc": 0.9905,
+          "val_acc": 0.9556,
+          "test_acc": 1.0,
+          "val_loss_last": 0.165,
+          "test_loss": 0.0,
+          "train_loss_first": 0.6477,
+          "train_loss_last": 0.044,
+          "time_s": 0.711,
+          "rss_before": 395.7,
+          "rss_after": 395.6,
+          "rss_delta": -0.1
+        },
+        {
+          "config": {
+            "n_hidden": 2,
+            "width": 64,
+            "activation": "relu",
+            "optimizer": "adam",
+            "lr": 0.001,
+            "batch_size": 32,
+            "weight_decay": 0.0,
+            "dropout": 0.0
+          },
+          "n_params": 4482,
+          "train_acc": 0.9952,
+          "val_acc": 0.9556,
+          "test_acc": 1.0,
+          "val_loss_last": 0.2124,
+          "test_loss": 0.0,
+          "train_loss_first": 0.655,
+          "train_loss_last": 0.032,
+          "time_s": 0.935,
+          "rss_before": 395.6,
+          "rss_after": 396.4,
+          "rss_delta": 0.7
+        },
+        {
+          "config": {
+            "n_hidden": 2,
+            "width": 128,
+            "activation": "relu",
+            "optimizer": "adam",
+            "lr": 0.001,
+            "batch_size": 32,
+            "weight_decay": 0.0,
+            "dropout": 0.0
+          },
+          "n_params": 17154,
+          "train_acc": 0.9952,
+          "val_acc": 0.9556,
+          "test_acc": 1.0,
+          "val_loss_last": 0.2961,
+          "test_loss": 0.0,
+          "train_loss_first": 0.4981,
+          "train_loss_last": 0.0218,
+          "time_s": 0.94,
+          "rss_before": 396.5,
+          "rss_after": 397.5,
+          "rss_delta": 1.0
+        },
+        {
+          "config": {
+            "n_hidden": 2,
+            "width": 256,
+            "activation": "relu",
+            "optimizer": "adam",
+            "lr": 0.001,
+            "batch_size": 32,
+            "weight_decay": 0.0,
+            "dropout": 0.0
+          },
+          "n_params": 67074,
+          "train_acc": 0.9857,
+          "val_acc": 0.9333,
+          "test_acc": 1.0,
+          "val_loss_last": 0.385,
+          "test_loss": 0.0,
+          "train_loss_first": 0.3725,
+          "train_loss_last": 0.0202,
+          "time_s": 1.273,
+          "rss_before": 397.6,
+          "rss_after": 400.7,
+          "rss_delta": 3.1
+        }
+      ]
+    },
+    "depth": {
+      "title": "隐藏层层数",
+      "xlabels": [
+        "1 层",
+        "2 层",
+        "3 层",
+        "4 层",
+        "6 层"
+      ],
+      "rows": [
+        {
+          "config": {
+            "n_hidden": 1,
+            "width": 64,
+            "activation": "relu",
+            "optimizer": "adam",
+            "lr": 0.001,
+            "batch_size": 32,
+            "weight_decay": 0.0,
+            "dropout": 0.0
+          },
+          "n_params": 322,
+          "train_acc": 0.9714,
+          "val_acc": 0.9333,
+          "test_acc": 0.9778,
+          "val_loss_last": 0.198,
+          "test_loss": 0.0,
+          "train_loss_first": 0.7611,
+          "train_loss_last": 0.1142,
+          "time_s": 0.592,
+          "rss_before": 400.7,
+          "rss_after": 397.5,
+          "rss_delta": -3.2
+        },
+        {
+          "config": {
+            "n_hidden": 2,
+            "width": 64,
+            "activation": "relu",
+            "optimizer": "adam",
+            "lr": 0.001,
+            "batch_size": 32,
+            "weight_decay": 0.0,
+            "dropout": 0.0
+          },
+          "n_params": 4482,
+          "train_acc": 0.9952,
+          "val_acc": 0.9556,
+          "test_acc": 1.0,
+          "val_loss_last": 0.2124,
+          "test_loss": 0.0,
+          "train_loss_first": 0.655,
+          "train_loss_last": 0.032,
+          "time_s": 1.011,
+          "rss_before": 397.4,
+          "rss_after": 397.5,
+          "rss_delta": 0.1
+        },
+        {
+          "config": {
+            "n_hidden": 3,
+            "width": 64,
+            "activation": "relu",
+            "optimizer": "adam",
+            "lr": 0.001,
+            "batch_size": 32,
+            "weight_decay": 0.0,
+            "dropout": 0.0
+          },
+          "n_params": 8642,
+          "train_acc": 0.9905,
+          "val_acc": 0.9556,
+          "test_acc": 0.9778,
+          "val_loss_last": 0.3808,
+          "test_loss": 0.0,
+          "train_loss_first": 0.6246,
+          "train_loss_last": 0.0195,
+          "time_s": 1.045,
+          "rss_before": 397.5,
+          "rss_after": 397.6,
+          "rss_delta": 0.2
+        },
+        {
+          "config": {
+            "n_hidden": 4,
+            "width": 64,
+            "activation": "relu",
+            "optimizer": "adam",
+            "lr": 0.001,
+            "batch_size": 32,
+            "weight_decay": 0.0,
+            "dropout": 0.0
+          },
+          "n_params": 12802,
+          "train_acc": 1.0,
+          "val_acc": 0.9556,
+          "test_acc": 1.0,
+          "val_loss_last": 0.4228,
+          "test_loss": 0.0,
+          "train_loss_first": 0.6454,
+          "train_loss_last": 0.0104,
+          "time_s": 1.3,
+          "rss_before": 397.6,
+          "rss_after": 397.7,
+          "rss_delta": 0.1
+        },
+        {
+          "config": {
+            "n_hidden": 6,
+            "width": 64,
+            "activation": "relu",
+            "optimizer": "adam",
+            "lr": 0.001,
+            "batch_size": 32,
+            "weight_decay": 0.0,
+            "dropout": 0.0
+          },
+          "n_params": 21122,
+          "train_acc": 0.9905,
+          "val_acc": 0.9333,
+          "test_acc": 1.0,
+          "val_loss_last": 0.3091,
+          "test_loss": 0.0,
+          "train_loss_first": 0.684,
+          "train_loss_last": 0.0213,
+          "time_s": 1.963,
+          "rss_before": 397.7,
+          "rss_after": 397.9,
+          "rss_delta": 0.1
+        }
+      ]
+    },
+    "activation": {
+      "title": "激活函数",
+      "xlabels": [
+        "ReLU",
+        "tanh",
+        "sigmoid",
+        "ELU"
+      ],
+      "rows": [
+        {
+          "config": {
+            "n_hidden": 2,
+            "width": 64,
+            "activation": "relu",
+            "optimizer": "adam",
+            "lr": 0.001,
+            "batch_size": 32,
+            "weight_decay": 0.0,
+            "dropout": 0.0
+          },
+          "n_params": 4482,
+          "train_acc": 0.9952,
+          "val_acc": 0.9556,
+          "test_acc": 1.0,
+          "val_loss_last": 0.2124,
+          "test_loss": 0.0,
+          "train_loss_first": 0.655,
+          "train_loss_last": 0.032,
+          "time_s": 0.932,
+          "rss_before": 397.9,
+          "rss_after": 397.8,
+          "rss_delta": -0.0
+        },
+        {
+          "config": {
+            "n_hidden": 2,
+            "width": 64,
+            "activation": "tanh",
+            "optimizer": "adam",
+            "lr": 0.001,
+            "batch_size": 32,
+            "weight_decay": 0.0,
+            "dropout": 0.0
+          },
+          "n_params": 4482,
+          "train_acc": 0.9857,
+          "val_acc": 0.9556,
+          "test_acc": 1.0,
+          "val_loss_last": 0.2253,
+          "test_loss": 0.0,
+          "train_loss_first": 0.5464,
+          "train_loss_last": 0.0583,
+          "time_s": 0.969,
+          "rss_before": 397.8,
+          "rss_after": 397.8,
+          "rss_delta": 0.0
+        },
+        {
+          "config": {
+            "n_hidden": 2,
+            "width": 64,
+            "activation": "sigmoid",
+            "optimizer": "adam",
+            "lr": 0.001,
+            "batch_size": 32,
+            "weight_decay": 0.0,
+            "dropout": 0.0
+          },
+          "n_params": 4482,
+          "train_acc": 0.8571,
+          "val_acc": 0.7778,
+          "test_acc": 0.8667,
+          "val_loss_last": 0.4513,
+          "test_loss": 0.0,
+          "train_loss_first": 0.6899,
+          "train_loss_last": 0.2778,
+          "time_s": 0.858,
+          "rss_before": 397.8,
+          "rss_after": 397.9,
+          "rss_delta": 0.1
+        },
+        {
+          "config": {
+            "n_hidden": 2,
+            "width": 64,
+            "activation": "elu",
+            "optimizer": "adam",
+            "lr": 0.001,
+            "batch_size": 32,
+            "weight_decay": 0.0,
+            "dropout": 0.0
+          },
+          "n_params": 4482,
+          "train_acc": 0.9857,
+          "val_acc": 0.9556,
+          "test_acc": 1.0,
+          "val_loss_last": 0.1617,
+          "test_loss": 0.0,
+          "train_loss_first": 0.5504,
+          "train_loss_last": 0.0591,
+          "time_s": 0.943,
+          "rss_before": 398.0,
+          "rss_after": 398.2,
+          "rss_delta": 0.2
+        }
+      ]
+    },
+    "lr": {
+      "title": "学习率（Adam）",
+      "xlabels": [
+        "1e-4",
+        "3e-4",
+        "1e-3",
+        "3e-3",
+        "1e-2"
+      ],
+      "rows": [
+        {
+          "config": {
+            "n_hidden": 2,
+            "width": 64,
+            "activation": "relu",
+            "optimizer": "adam",
+            "lr": 0.0001,
+            "batch_size": 32,
+            "weight_decay": 0.0,
+            "dropout": 0.0
+          },
+          "n_params": 4482,
+          "train_acc": 0.9048,
+          "val_acc": 0.8444,
+          "test_acc": 0.9111,
+          "val_loss_last": 0.3387,
+          "test_loss": 0.0,
+          "train_loss_first": 0.7391,
+          "train_loss_last": 0.2061,
+          "time_s": 0.885,
+          "rss_before": 398.2,
+          "rss_after": 398.2,
+          "rss_delta": 0.1
+        },
+        {
+          "config": {
+            "n_hidden": 2,
+            "width": 64,
+            "activation": "relu",
+            "optimizer": "adam",
+            "lr": 0.0003,
+            "batch_size": 32,
+            "weight_decay": 0.0,
+            "dropout": 0.0
+          },
+          "n_params": 4482,
+          "train_acc": 0.981,
+          "val_acc": 0.9556,
+          "test_acc": 1.0,
+          "val_loss_last": 0.1521,
+          "test_loss": 0.0,
+          "train_loss_first": 0.7193,
+          "train_loss_last": 0.0762,
+          "time_s": 0.844,
+          "rss_before": 398.2,
+          "rss_after": 398.2,
+          "rss_delta": -0.0
+        },
+        {
+          "config": {
+            "n_hidden": 2,
+            "width": 64,
+            "activation": "relu",
+            "optimizer": "adam",
+            "lr": 0.001,
+            "batch_size": 32,
+            "weight_decay": 0.0,
+            "dropout": 0.0
+          },
+          "n_params": 4482,
+          "train_acc": 0.9952,
+          "val_acc": 0.9556,
+          "test_acc": 1.0,
+          "val_loss_last": 0.2124,
+          "test_loss": 0.0,
+          "train_loss_first": 0.655,
+          "train_loss_last": 0.032,
+          "time_s": 0.986,
+          "rss_before": 398.2,
+          "rss_after": 398.2,
+          "rss_delta": 0.0
+        },
+        {
+          "config": {
+            "n_hidden": 2,
+            "width": 64,
+            "activation": "relu",
+            "optimizer": "adam",
+            "lr": 0.003,
+            "batch_size": 32,
+            "weight_decay": 0.0,
+            "dropout": 0.0
+          },
+          "n_params": 4482,
+          "train_acc": 0.9952,
+          "val_acc": 0.9333,
+          "test_acc": 0.9778,
+          "val_loss_last": 0.3776,
+          "test_loss": 0.0,
+          "train_loss_first": 0.5085,
+          "train_loss_last": 0.0231,
+          "time_s": 1.008,
+          "rss_before": 398.2,
+          "rss_after": 398.2,
+          "rss_delta": 0.0
+        },
+        {
+          "config": {
+            "n_hidden": 2,
+            "width": 64,
+            "activation": "relu",
+            "optimizer": "adam",
+            "lr": 0.01,
+            "batch_size": 32,
+            "weight_decay": 0.0,
+            "dropout": 0.0
+          },
+          "n_params": 4482,
+          "train_acc": 0.9952,
+          "val_acc": 0.9556,
+          "test_acc": 1.0,
+          "val_loss_last": 0.4107,
+          "test_loss": 0.0,
+          "train_loss_first": 0.2981,
+          "train_loss_last": 0.0195,
+          "time_s": 0.943,
+          "rss_before": 398.2,
+          "rss_after": 398.2,
+          "rss_delta": 0.0
+        }
+      ]
+    },
+    "optimizer": {
+      "title": "优化器",
+      "xlabels": [
+        "SGD\nlr=1e-2",
+        "RMSprop\nlr=1e-3",
+        "Adam\nlr=1e-3",
+        "AdamW\nlr=1e-3"
+      ],
+      "rows": [
+        {
+          "config": {
+            "n_hidden": 2,
+            "width": 64,
+            "activation": "relu",
+            "optimizer": "sgd",
+            "lr": 0.01,
+            "batch_size": 32,
+            "weight_decay": 0.0,
+            "dropout": 0.0
+          },
+          "n_params": 4482,
+          "train_acc": 0.9857,
+          "val_acc": 0.9556,
+          "test_acc": 1.0,
+          "val_loss_last": 0.1607,
+          "test_loss": 0.0,
+          "train_loss_first": 0.6914,
+          "train_loss_last": 0.0447,
+          "time_s": 0.647,
+          "rss_before": 398.2,
+          "rss_after": 398.2,
+          "rss_delta": -0.0
+        },
+        {
+          "config": {
+            "n_hidden": 2,
+            "width": 64,
+            "activation": "relu",
+            "optimizer": "rmsprop",
+            "lr": 0.001,
+            "batch_size": 32,
+            "weight_decay": 0.0,
+            "dropout": 0.0
+          },
+          "n_params": 4482,
+          "train_acc": 1.0,
+          "val_acc": 0.9556,
+          "test_acc": 1.0,
+          "val_loss_last": 0.4613,
+          "test_loss": 0.0,
+          "train_loss_first": 0.4109,
+          "train_loss_last": 0.0127,
+          "time_s": 0.851,
+          "rss_before": 398.2,
+          "rss_after": 398.2,
+          "rss_delta": 0.0
+        },
+        {
+          "config": {
+            "n_hidden": 2,
+            "width": 64,
+            "activation": "relu",
+            "optimizer": "adam",
+            "lr": 0.001,
+            "batch_size": 32,
+            "weight_decay": 0.0,
+            "dropout": 0.0
+          },
+          "n_params": 4482,
+          "train_acc": 0.9952,
+          "val_acc": 0.9556,
+          "test_acc": 1.0,
+          "val_loss_last": 0.2124,
+          "test_loss": 0.0,
+          "train_loss_first": 0.655,
+          "train_loss_last": 0.032,
+          "time_s": 0.849,
+          "rss_before": 398.2,
+          "rss_after": 398.3,
+          "rss_delta": 0.0
+        },
+        {
+          "config": {
+            "n_hidden": 2,
+            "width": 64,
+            "activation": "relu",
+            "optimizer": "adamw",
+            "lr": 0.001,
+            "batch_size": 32,
+            "weight_decay": 0.0,
+            "dropout": 0.0
+          },
+          "n_params": 4482,
+          "train_acc": 0.9952,
+          "val_acc": 0.9556,
+          "test_acc": 1.0,
+          "val_loss_last": 0.2124,
+          "test_loss": 0.0,
+          "train_loss_first": 0.655,
+          "train_loss_last": 0.032,
+          "time_s": 0.89,
+          "rss_before": 398.3,
+          "rss_after": 398.3,
+          "rss_delta": 0.0
+        }
+      ]
+    },
+    "batch": {
+      "title": "batch size",
+      "xlabels": [
+        "8",
+        "16",
+        "32",
+        "64",
+        "128",
+        "210（全量）"
+      ],
+      "rows": [
+        {
+          "config": {
+            "n_hidden": 2,
+            "width": 64,
+            "activation": "relu",
+            "optimizer": "adam",
+            "lr": 0.001,
+            "batch_size": 8,
+            "weight_decay": 0.0,
+            "dropout": 0.0
+          },
+          "n_params": 4482,
+          "train_acc": 0.9952,
+          "val_acc": 0.9333,
+          "test_acc": 1.0,
+          "val_loss_last": 0.3144,
+          "test_loss": 0.0,
+          "train_loss_first": 0.5016,
+          "train_loss_last": 0.0205,
+          "time_s": 2.836,
+          "rss_before": 398.3,
+          "rss_after": 398.2,
+          "rss_delta": -0.1
+        },
+        {
+          "config": {
+            "n_hidden": 2,
+            "width": 64,
+            "activation": "relu",
+            "optimizer": "adam",
+            "lr": 0.001,
+            "batch_size": 16,
+            "weight_decay": 0.0,
+            "dropout": 0.0
+          },
+          "n_params": 4482,
+          "train_acc": 0.9952,
+          "val_acc": 0.9556,
+          "test_acc": 1.0,
+          "val_loss_last": 0.2495,
+          "test_loss": 0.0,
+          "train_loss_first": 0.5969,
+          "train_loss_last": 0.0261,
+          "time_s": 1.705,
+          "rss_before": 398.2,
+          "rss_after": 398.2,
+          "rss_delta": 0.0
+        },
+        {
+          "config": {
+            "n_hidden": 2,
+            "width": 64,
+            "activation": "relu",
+            "optimizer": "adam",
+            "lr": 0.001,
+            "batch_size": 32,
+            "weight_decay": 0.0,
+            "dropout": 0.0
+          },
+          "n_params": 4482,
+          "train_acc": 0.9952,
+          "val_acc": 0.9556,
+          "test_acc": 1.0,
+          "val_loss_last": 0.2124,
+          "test_loss": 0.0,
+          "train_loss_first": 0.655,
+          "train_loss_last": 0.032,
+          "time_s": 0.885,
+          "rss_before": 398.2,
+          "rss_after": 398.3,
+          "rss_delta": 0.0
+        },
+        {
+          "config": {
+            "n_hidden": 2,
+            "width": 64,
+            "activation": "relu",
+            "optimizer": "adam",
+            "lr": 0.001,
+            "batch_size": 64,
+            "weight_decay": 0.0,
+            "dropout": 0.0
+          },
+          "n_params": 4482,
+          "train_acc": 0.9905,
+          "val_acc": 0.9556,
+          "test_acc": 1.0,
+          "val_loss_last": 0.1685,
+          "test_loss": 0.0,
+          "train_loss_first": 0.6925,
+          "train_loss_last": 0.0433,
+          "time_s": 0.643,
+          "rss_before": 398.3,
+          "rss_after": 398.2,
+          "rss_delta": -0.0
+        },
+        {
+          "config": {
+            "n_hidden": 2,
+            "width": 64,
+            "activation": "relu",
+            "optimizer": "adam",
+            "lr": 0.001,
+            "batch_size": 128,
+            "weight_decay": 0.0,
+            "dropout": 0.0
+          },
+          "n_params": 4482,
+          "train_acc": 0.9857,
+          "val_acc": 0.9556,
+          "test_acc": 1.0,
+          "val_loss_last": 0.1457,
+          "test_loss": 0.0,
+          "train_loss_first": 0.7194,
+          "train_loss_last": 0.0605,
+          "time_s": 0.326,
+          "rss_before": 398.2,
+          "rss_after": 398.6,
+          "rss_delta": 0.4
+        },
+        {
+          "config": {
+            "n_hidden": 2,
+            "width": 64,
+            "activation": "relu",
+            "optimizer": "adam",
+            "lr": 0.001,
+            "batch_size": 210,
+            "weight_decay": 0.0,
+            "dropout": 0.0
+          },
+          "n_params": 4482,
+          "train_acc": 0.9619,
+          "val_acc": 0.9111,
+          "test_acc": 0.9778,
+          "val_loss_last": 0.211,
+          "test_loss": 0.0,
+          "train_loss_first": 0.734,
+          "train_loss_last": 0.1244,
+          "time_s": 0.222,
+          "rss_before": 398.6,
+          "rss_after": 398.6,
+          "rss_delta": -0.0
+        }
+      ]
+    },
+    "noise": {
+      "title": "数据噪声",
+      "xlabels": [
+        "0.0",
+        "0.1",
+        "0.2",
+        "0.4",
+        "0.6",
+        "0.8"
+      ],
+      "rows": [
+        {
+          "config": {
+            "n_hidden": 2,
+            "width": 64,
+            "activation": "relu",
+            "optimizer": "adam",
+            "lr": 0.001,
+            "batch_size": 32,
+            "weight_decay": 0.0,
+            "dropout": 0.0,
+            "noise": 0.0
+          },
+          "n_params": 4482,
+          "train_acc": 1.0,
+          "val_acc": 1.0,
+          "test_acc": 1.0,
+          "val_loss_last": 0.0017,
+          "test_loss": 0.0,
+          "train_loss_first": 0.6528,
+          "train_loss_last": 0.0009,
+          "time_s": 0.868,
+          "rss_before": 398.6,
+          "rss_after": 398.3,
+          "rss_delta": -0.3
+        },
+        {
+          "config": {
+            "n_hidden": 2,
+            "width": 64,
+            "activation": "relu",
+            "optimizer": "adam",
+            "lr": 0.001,
+            "batch_size": 32,
+            "weight_decay": 0.0,
+            "dropout": 0.0,
+            "noise": 0.1
+          },
+          "n_params": 4482,
+          "train_acc": 1.0,
+          "val_acc": 1.0,
+          "test_acc": 1.0,
+          "val_loss_last": 0.01,
+          "test_loss": 0.0,
+          "train_loss_first": 0.654,
+          "train_loss_last": 0.0029,
+          "time_s": 0.877,
+          "rss_before": 398.3,
+          "rss_after": 398.3,
+          "rss_delta": -0.0
+        },
+        {
+          "config": {
+            "n_hidden": 2,
+            "width": 64,
+            "activation": "relu",
+            "optimizer": "adam",
+            "lr": 0.001,
+            "batch_size": 32,
+            "weight_decay": 0.0,
+            "dropout": 0.0,
+            "noise": 0.2
+          },
+          "n_params": 4482,
+          "train_acc": 0.9952,
+          "val_acc": 0.9556,
+          "test_acc": 1.0,
+          "val_loss_last": 0.2124,
+          "test_loss": 0.0,
+          "train_loss_first": 0.655,
+          "train_loss_last": 0.032,
+          "time_s": 0.841,
+          "rss_before": 398.3,
+          "rss_after": 398.3,
+          "rss_delta": 0.0
+        },
+        {
+          "config": {
+            "n_hidden": 2,
+            "width": 64,
+            "activation": "relu",
+            "optimizer": "adam",
+            "lr": 0.001,
+            "batch_size": 32,
+            "weight_decay": 0.0,
+            "dropout": 0.0,
+            "noise": 0.4
+          },
+          "n_params": 4482,
+          "train_acc": 0.8952,
+          "val_acc": 0.8222,
+          "test_acc": 0.8889,
+          "val_loss_last": 0.4285,
+          "test_loss": 0.0,
+          "train_loss_first": 0.6566,
+          "train_loss_last": 0.2203,
+          "time_s": 0.986,
+          "rss_before": 398.3,
+          "rss_after": 398.3,
+          "rss_delta": -0.0
+        },
+        {
+          "config": {
+            "n_hidden": 2,
+            "width": 64,
+            "activation": "relu",
+            "optimizer": "adam",
+            "lr": 0.001,
+            "batch_size": 32,
+            "weight_decay": 0.0,
+            "dropout": 0.0,
+            "noise": 0.6
+          },
+          "n_params": 4482,
+          "train_acc": 0.8333,
+          "val_acc": 0.6667,
+          "test_acc": 0.8222,
+          "val_loss_last": 0.5441,
+          "test_loss": 0.0,
+          "train_loss_first": 0.6578,
+          "train_loss_last": 0.3552,
+          "time_s": 0.989,
+          "rss_before": 398.3,
+          "rss_after": 398.3,
+          "rss_delta": 0.0
+        },
+        {
+          "config": {
+            "n_hidden": 2,
+            "width": 64,
+            "activation": "relu",
+            "optimizer": "adam",
+            "lr": 0.001,
+            "batch_size": 32,
+            "weight_decay": 0.0,
+            "dropout": 0.0,
+            "noise": 0.8
+          },
+          "n_params": 4482,
+          "train_acc": 0.7857,
+          "val_acc": 0.6444,
+          "test_acc": 0.7556,
+          "val_loss_last": 0.5885,
+          "test_loss": 0.0,
+          "train_loss_first": 0.6595,
+          "train_loss_last": 0.4286,
+          "time_s": 1.002,
+          "rss_before": 398.3,
+          "rss_after": 398.3,
+          "rss_delta": -0.0
+        }
+      ]
+    }
+  }
+}
